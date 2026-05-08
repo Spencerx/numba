@@ -28,6 +28,7 @@ numba\.misc\..*
 numba\.mviewbuf
 numba\.np\.(arraymath|arrayobj|linalg|npyimpl|random|types|ufunc_db|unsafe)\..*
 numba\.np\.extensions
+numba\.np\.polynomial\.polynomial_core\.type_polynomial
 numba\.np\.ufunc\.parallel\..*
 numba\.np\.ufunc\.(omppool|tbbpool|workqueue)
 numba\.parfors\..*
