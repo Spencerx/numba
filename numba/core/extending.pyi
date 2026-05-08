@@ -63,7 +63,7 @@ _Target: TypeAlias = Literal["generic", "cpu", "cuda", "npyufunc"] | str
 _Inline: TypeAlias = Literal["never", "always"] | _FnInline
 
 @type_check_only
-class _TypeCallableDecorater(Protocol):
+class _TypeCallableDecorator(Protocol):
     def __call__(
         self,
         /,
@@ -87,7 +87,7 @@ class _IntrinsicDecorator(Protocol):
 ###
 # stubs
 
-def type_callable(func: Callable[..., object] | str) -> _TypeCallableDecorater: ...
+def type_callable(func: Callable[..., object] | str) -> _TypeCallableDecorator: ...
 def overload(
     func: Callable[..., object],
     jit_options: _JITOptions = ...,
