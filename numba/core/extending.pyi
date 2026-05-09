@@ -73,11 +73,11 @@ class _TypeCallableDecorator(Protocol):
     ) -> Callable[[_ContextT], _CallableT]: ...
 
 @type_check_only
-class _OverloadDecorater(Protocol):
+class _OverloadDecorator(Protocol):
     def __call__(self, /, overload_func: _CallableT) -> _CallableT: ...
 
 @type_check_only
-class _RegisterJitableDecorater(Protocol):
+class _RegisterJitableDecorator(Protocol):
     def __call__(self, /, fn: _CallableT) -> _CallableT: ...
 
 @type_check_only
@@ -96,14 +96,14 @@ def overload(
     prefer_literal: bool = False,
     *,
     target: _Target = ...,
-) -> _OverloadDecorater: ...
+) -> _OverloadDecorator: ...
 
 #
 @typing.overload
 def register_jitable(fn: _CallableT, /) -> _CallableT: ...
 @typing.overload
 # we can't use `**kwargs: Unpack[_JitOptions]` because mypy doesn't support PEP 728 yet
-def register_jitable(**kwargs: object) -> _RegisterJitableDecorater: ...
+def register_jitable(**kwargs: object) -> _RegisterJitableDecorator: ...
 
 #
 def overload_attribute(
@@ -114,7 +114,7 @@ def overload_attribute(
     prefer_literal: bool = False,
     base: type = ...,
     target: _Target = ...,
-) -> _OverloadDecorater: ...
+) -> _OverloadDecorator: ...
 def overload_method(
     typ: Type | type[Type],
     attr: str,
@@ -122,7 +122,7 @@ def overload_method(
     inline: _Inline = "never",
     prefer_literal: bool = False,
     target: _Target = ...,
-) -> _OverloadDecorater: ...
+) -> _OverloadDecorator: ...
 def overload_classmethod(
     typ: Type | type[Type],
     attr: str,
@@ -130,7 +130,7 @@ def overload_classmethod(
     inline: _Inline = "never",
     prefer_literal: bool = False,
     target: _Target = ...,
-) -> _OverloadDecorater: ...
+) -> _OverloadDecorator: ...
 def make_attribute_wrapper(
     typeclass: type[Type], struct_attr: str, python_attr: str
 ) -> None: ...
