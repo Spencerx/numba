@@ -1,7 +1,6 @@
 numba\.__main__
 numba\._helperlib\..*
 numba\.cloudpickle\..*
-numba\.core\.extending\..*
 numba\.core\.boxing\..*
 numba\.core\.bytecode\..*
 numba\.core\.byteflow\..*
@@ -29,6 +28,7 @@ numba\.misc\..*
 numba\.mviewbuf
 numba\.np\.(arraymath|arrayobj|linalg|npyimpl|random|types|ufunc_db|unsafe)\..*
 numba\.np\.extensions
+numba\.np\.polynomial\.polynomial_core\.type_polynomial
 numba\.np\.ufunc\.parallel\..*
 numba\.np\.ufunc\.(omppool|tbbpool|workqueue)
 numba\.parfors\..*
